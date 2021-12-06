@@ -1,0 +1,136 @@
+html, body, #home {
+	height: 100%;
+	overflow-x: hidden;
+}
+body{
+	
+	background: url(imagens/capa.png) no-repeat, url(imagens/fundo.png), linear-gradient(50deg, #FFA500, #FF8C00) ;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	font-family: Helvetica, Arial, sans-serif;
+	color: white;
+}
+
+
+.navbar-brand{
+	background-size: 100px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+nav.navbar-transparente{
+	padding: 15px 0;
+	background: rgba(240, 230, 40, 0.6);
+	color: #FFA500;
+}
+
+.capa{
+	text-align: center;
+}
+
+.navbar-nav .nav-link{
+	color: #008B8B;
+
+}
+
+.nav-link{
+	background-color: #FFD700;
+	border-radius: 20px 40px 60px 80px;
+	padding: 0;
+	margin: 10px;
+}
+
+.navbar-nav .nav-link:hover{
+	color: #2F4F4F;
+	background-color: rgba(240, 230, 40, 0.4);
+	border-bottom: 1px solid white;
+	border-radius: 10px;
+}
+
+.navbar-transparente h1{
+	color: white;
+	text-transform: uppercase;
+}
+
+.carousel-control-prev, .carousel-control-next{
+	width: 5%;
+}
+
+#home h1{
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin-bottom: 50px;
+	color: white;
+	font-size: 3em;
+}
+#somos h2{
+	color: white;
+	font-size: 2em;
+}
+#somos h3{
+	margin-top: 10px;
+	color: white;
+	font-size: 1.5em;
+}
+
+#declaracao{
+	margin-top: 15px;
+}
+
+#somos{
+	margin-top: 50px;
+
+}
+
+#painel{
+	background: white;
+}
+
+#painel h2, #painel h3{
+	color: #FF8C00;
+}
+
+.caixa{
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.fotos{
+	padding: 10px 5px;
+	
+}
+
+.fotos img{
+	
+	padding: 5px 0;
+}
+
+h2{
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+footer{
+	background: #A9A9A9;
+	padding: 50px 0 30px 0;
+	position: relative;
+}
+
+footer ul{
+	list-style: none;
+}
+
+footer ul li{
+	float: right;
+	margin: o 5px;
+}
+footer h4{
+	text-transform: uppercase;
+	color: #FF8C00;
+	font-size: 1.1em;
+}
+
+footer .navbar-nav a{
+	color: white;
+	font-size: 0.9em;
+}
