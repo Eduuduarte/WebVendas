@@ -1,4 +1,4 @@
-html, body, #home {
+html, body, #home, #vender, #consultar {
 	height: 100%;
 	overflow-x: hidden;
 }
@@ -133,4 +133,23 @@ footer h4{
 footer .navbar-nav a{
 	color: white;
 	font-size: 0.9em;
+}
+
+/*estilos da página venda*/
+
+#formulario{
+	background-color: white;
+}
+
+#vender h1{
+	color: #FF8C00;
+}
+
+/*estilos da página consulta*/
+
+#consultar h1{
+	color: white;
+}
+#tabela th{
+	color: white;
 }

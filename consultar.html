@@ -2,7 +2,7 @@
 
 <html lang="pt-br">
 <head>
-	<title>Vendas</title>
+	<title>Vendas - Consulta</title>
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" type="text/css" href="estilo.css">
@@ -42,8 +42,8 @@
 				<div class="collapse navbar-collapse" id="nav-principal">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
-						<li class="nav-item active"><a href="vender.html" class="nav-link disabled">Vender</a></li>
-						<li class="nav-item"><a href="consultar.html" class="nav-link">Consultar</a></li>
+						<li class="nav-item"><a href="vender.html" class="nav-link">Vender</a></li>
+						<li class="nav-item active"><a href="consultar.html" class="nav-link disabled">Consultar</a></li>
 						<li class="nav-item"><a href="historia.html" class="nav-link">Nossa História</a></li>
 					</ul>
 				</div>
@@ -53,49 +53,58 @@
 		
 	</header> <!-- Fim do cabeçalho -->
 
-	<section class="d-flex" id="vender">
-		<div class="container align-self-center" >
-			<div class="row">
-				<div class="col-md-6 jumbotron text-center" id="formulario">
-					<h1 class="display-4">Cadastrar Venda</h1>
-					<div class="row" >
-						<div class="col-md-6 form-group">
-							<input class="form-control" type="text" placeholder="Código do cliente" name="codigoCliente">
-						</div>
-						<div class="col-md-6 form-group">
-							<input type="text" placeholder="Cliente" class="form-control" name="cliente">							
-						</div>
-					</div>
-					<div class="row" >
-						<div class="col-md-6 form-group">
-							<input class="form-control" type="text" placeholder="Código do Produto" name="codigoProduto">
-						</div>
-						<div class="col-md-6 form-group">
-							<select class="form-control">
-								
-								
-							</select>					
-						</div>
-					</div>
-					<div class="row" >
-						<div class="col-md-6 form-group">
-							<input class="form-control" type="number" placeholder="Quantidade" name="codigoCliente">
-						</div>
-						<div class="col-md-6 form-group">
-							<input type="text" class="form-control" placeholder="Valor U." name="cliente">							
-						</div>
-					</div>
-					<div class="row" >
-						<div class="col-md-6 form-group">
-							<input class="form-control" type="number" placeholder="Valor Total" name="codigoCliente">
-						</div>
-						<div class="col-md-6 form-group">
-							<button class="btn btn-outline-success btn-lg">Vender</button>						
-						</div>
-					</div>
+	<section class="d-flex" id="consultar">
+		<div class="container">
+			<div class="row mb-5 text-center">
+				<div class="col">
+					<h1 class="display-4">Consultar Suas Vendas</h1>
 				</div>
-				<div class="col-md-6">
-					<img src="imagens/vendedor2.png" class="mx-auto d-block">
+					
+				</div>
+
+				<div class="row">
+					<div class="col-md-2 form-group">
+						<input class="form-control" type="text" name="codigoCliente" placeholder="Código do cliente">
+					</div>
+					<div class="col-md-3 form-group">
+						<input class="form-control" type="text" name="cliente" placeholder="Cliente">
+					</div>
+					<div class="col-md-3 form-group">
+						<input class="form-control" type="text" name="cliente" placeholder="Código do produto">
+					</div>
+					<div class="col-md-2 form-group">
+						<select class="form-control">
+							<option>Produto</option>
+								<option>Notebook</option>
+								<option>Smartphone</option>
+								<option>Fone de ouvido</option>
+						</select>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-primary"><i class="fas fa-search"></i></button>	
+					</div>
+					
+				
+			</div>
+
+			<div class="row" id="tabela">
+				<div class="col">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Cód. Cliente</th>
+								<th>Cliente</th>
+								<th>Cód. Produto</th>
+								<th>Produto</th>
+								<th>Valor U.</th>
+								<th>Quantidade</th>
+								<th>Total (R$)</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
 				</div>
 				
 			</div>
@@ -103,6 +112,7 @@
 		</div>
 		
 	</section>
+
 	
 
 	<footer>
