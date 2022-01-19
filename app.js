@@ -12,6 +12,16 @@ class Vendas{
 		this.valorTotal = valorTotal
 	}
 
+	validarDados(){
+		for(let i in this){
+			if(this[i] == undefined || this[i] == '' || this[i] == null){
+				return false
+			}
+		}
+
+		return true
+	}
+
 }
 
 class Bd{
@@ -22,6 +32,7 @@ class Bd{
 		if (id === null) {
 			localStorage.setItem('id', 0)
 		}
+
 	}
 
 	getProximoId(){
@@ -34,6 +45,7 @@ class Bd{
 	gravar(v){
 		let id = this.getProximoId()
 
+		
 		localStorage.setItem(id, JSON.stringify(v))
 
 		localStorage.setItem('id', id)
@@ -55,6 +67,14 @@ class Bd{
 			
 		}
 	}
+}
+
+function multiplicarValores(){
+	let quantidade = document.getElementById('quantidade')
+	let valorUni = document.getElementById('valorUni')
+	let valorTotal = document.getElementById('valorTotal')
+
+	valorTotal.innerHTML= "R$ " + (quantidade.value * valorUni.value)
 }
 
 //Instância da classe bando de dados - Bd
@@ -80,15 +100,37 @@ function cadastrarVendas(){
 
 		)
 
-	console.log(venda)
+	//console.log(venda)
 
-	bd.gravar(venda)
-}
+	if(venda.validarDados()){
+		
+		bd.gravar(venda)
 
-function multiplicarValores(){
-	let quantidade = document.getElementById('quantidade')
-	let valorUni = document.getElementById('valorUni')
-	let valorTotal = document.getElementById('valorTotal')
+		//Configurar o modal
+		document.getElementById('modal_titulo').innerHTML = 'Venda registrada com sucesso'
+		document.getElementById('modal_titulo_div').className = "modal-header text-success"
+		document.getElementById('modal_conteudo').innerHTML = "Venda cadastrada com sucesso"
+		document.getElementById('modal_btn').innerHTML = "Voltar"
+		document.getElementById('modal_btn').className = "btn btn-success"
+		$('#modalRegistraVenda').modal('show')
 
-	valorTotal.innerHTML= "R$ " + (quantidade.value * valorUni.value)
+		codigoCliente.value = ''
+		cliente.value = ''
+		codigoProduto.value = ''
+		produto.value = ''
+		quantidade.value = ''
+		valorUni.value = ''
+		valorTotal.innerHTML = '' 
+
+
+	} else{
+		
+		document.getElementById('modal_titulo').innerHTML = 'Erro no registro da venda'
+		document.getElementById('modal_titulo_div').ClassName = "modal-header text-danger"
+		document.getElementById('modal_conteudo').innerHTML = "Erro no cadastro da venda, verifique se todos os campos foram preenchidos!"
+		document.getElementById('modal_btn').innerHTML = "Voltar e Corrigir"
+		document.getElementById('modal_btn').ClassName = "btn btn-danger"
+		$('#modalRegistraVenda').modal('show') 
+
+	}
 }
