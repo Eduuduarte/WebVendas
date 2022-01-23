@@ -27,7 +27,7 @@
 
 
 </head>
-<body>
+<body onload="carregarRegistroVendas()">
 
 	<header> <!-- Início do cabeçalho -->
 		<nav class="navbar navbar-expand-md navbar-info navbar-transparente">
@@ -86,10 +86,15 @@
 					
 				
 			</div>
+			
+		</div>
 
-			<div class="row" id="tabela">
+		</section>
+		<section class="d-flex justify-center">
+		<div class="container">
+		<div class="row" id="tabela">
 				<div class="col">
-					<table class="table">
+					<table class="table table-warning table-hover table-responsive-sm table-responsive-md">
 						<thead>
 							<tr>
 								<th>Cód. Cliente</th>
@@ -101,17 +106,18 @@
 								<th>Total (R$)</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="listaVendas">
 							
 						</tbody>
 					</table>
 				</div>
 				
 			</div>
-			
-		</div>
+			</div>
+
+		</section>
 		
-	</section>
+	
 
 	
 

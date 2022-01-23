@@ -64,8 +64,14 @@ class Bd{
 			
 			let venda = JSON.parse(localStorage.getItem(i))
 
-			
+			if(venda === null){
+				continue
+			}
+
+			venda.id = i
+			vendas.push(venda)	
 		}
+		return vendas
 	}
 }
 
@@ -133,4 +139,25 @@ function cadastrarVendas(){
 		$('#modalRegistraVenda').modal('show') 
 
 	}
+}
+
+function carregarRegistroVendas (venda = Array(), filtro = false){
+	venda = bd.recuperarRegistros()
+
+	console.log(venda)
+
+	let listaVendas = document.getElementById("listaVendas")
+	listaVendas.innerHTML = ""
+
+	venda.forEach(function (v){
+		let linha = listaVendas.insertRow()
+
+		linha.insertCell(0).innerHTML = v.codigoCliente
+		linha.insertCell(1).innerHTML = v.cliente
+		linha.insertCell(2).innerHTML = v.codigoProduto
+		linha.insertCell(3).innerHTML = v.produto
+		linha.insertCell(4).innerHTML = v.valorUni
+		linha.insertCell(5).innerHTML = v.quantidade
+		linha.insertCell(6).innerHTML = v.valorTotal
+	})
 }
