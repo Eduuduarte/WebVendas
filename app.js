@@ -73,6 +73,17 @@ class Bd{
 		}
 		return vendas
 	}
+
+	pesquisar(){
+
+		let vendasFiltro = Array()
+
+		vendasFiltro = this.recuperarRegistros()
+
+		return console.log(vendasFiltro)
+
+	}
+
 }
 
 function multiplicarValores(){
@@ -144,9 +155,8 @@ function cadastrarVendas(){
 function carregarRegistroVendas (venda = Array(), filtro = false){
 	venda = bd.recuperarRegistros()
 
-	console.log(venda)
-
 	let listaVendas = document.getElementById("listaVendas")
+	listaVendas.className = "table-dark"
 	listaVendas.innerHTML = ""
 
 	venda.forEach(function (v){
@@ -160,4 +170,11 @@ function carregarRegistroVendas (venda = Array(), filtro = false){
 		linha.insertCell(5).innerHTML = v.quantidade
 		linha.insertCell(6).innerHTML = v.valorTotal
 	})
+}
+
+function pesquisarVendas(){
+
+	let vendas = ""
+
+	bd.pesquisar()
 }
