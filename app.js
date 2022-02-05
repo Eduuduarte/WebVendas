@@ -1,5 +1,4 @@
 //Constructor do banco de dados
-
 class Vendas{
 	constructor(codigoCliente, cliente, codigoProduto, produto, quantidade, valorUni, valorTotal){
 
@@ -74,16 +73,31 @@ class Bd{
 		return vendas
 	}
 
-	pesquisar(){
+	pesquisar(venda){
 
 		let vendasFiltro = Array()
 
 		vendasFiltro = this.recuperarRegistros()
+		
+		if(venda.codigoCliente != ''){
+			vendasFiltro = vendasFiltro.filter(v => v.codigoCliente == venda.codigoCliente)
+		}
+		if(venda.cliente != ''){
+			vendasFiltro = vendasFiltro.filter(v => v.cliente == venda.cliente)
+		}
+		if(venda.codigoProduto != ''){
+			vendasFiltro = vendasFiltro.filter(v => v.codigoProduto == venda.codigoProduto)
+		}
+		if(venda.produto != ''){
+			vendasFiltro = vendasFiltro.filter(v => v.Produto == venda.produto)
+		}
 
-		return console.log(vendasFiltro)
-
+		return vendasFiltro
 	}
 
+	remover(id){
+		localStorage.removeItem(id)
+	}
 }
 
 function multiplicarValores(){
@@ -153,10 +167,13 @@ function cadastrarVendas(){
 }
 
 function carregarRegistroVendas (venda = Array(), filtro = false){
-	venda = bd.recuperarRegistros()
+	
+	if(venda.length == 0 && filtro == false){
+		venda = bd.recuperarRegistros()
+	}
 
 	let listaVendas = document.getElementById("listaVendas")
-	listaVendas.className = "table-dark"
+	listaVendas.className = "tabl'-dark"
 	listaVendas.innerHTML = ""
 
 	venda.forEach(function (v){
@@ -169,12 +186,33 @@ function carregarRegistroVendas (venda = Array(), filtro = false){
 		linha.insertCell(4).innerHTML = v.valorUni
 		linha.insertCell(5).innerHTML = v.quantidade
 		linha.insertCell(6).innerHTML = v.valorTotal
+
+		let btn = document.createElement('button')
+		btn.className = 'btn btn-danger'
+		btn.innerHTML = '<i class="fas fa-times"></i>'
+		btn.id = `id_vendas_${v.id}`
+		btn.onclick = function(){
+			let id = this.id.replace('id_vendas_', "")
+
+			bd.remover(id)
+
+			window.location.reload()
+		}
+		linha.insertCell(7).append(btn)
 	})
 }
 
 function pesquisarVendas(){
 
-	let vendas = ""
+	let codigoCliente = document.getElementById('codCliente').value
+	let cliente = document.getElementById('cliente').value
+	let codigoProduto = document.getElementById('codProduto').value
+	let produto = document.getElementById('produto').value
 
-	bd.pesquisar()
+	let vendas = new Vendas(codigoCliente, cliente, codigoProduto, produto)
+
+	let venda = bd.pesquisar(vendas)
+
+	this.carregarRegistroVendas(venda, true)
+	
 }

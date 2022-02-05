@@ -64,27 +64,26 @@
 
 				<div class="row">
 					<div class="col-md-2 form-group">
-						<input class="form-control" type="text" name="codigoCliente" placeholder="Código do cliente">
+						<input id="codCliente" class="form-control" type="text" name="codigoCliente" placeholder="Código do cliente">
 					</div>
 					<div class="col-md-3 form-group">
-						<input class="form-control" type="text" name="cliente" placeholder="Cliente">
+						<input id="cliente" class="form-control" type="text" name="cliente" placeholder="Cliente">
 					</div>
 					<div class="col-md-3 form-group">
-						<input class="form-control" type="text" name="cliente" placeholder="Código do produto">
+						<input id="codProduto" class="form-control" type="text" name="codProduto" placeholder="Código do produto">
 					</div>
 					<div class="col-md-2 form-group">
-						<select class="form-control">
-							<option>Produto</option>
-								<option>Notebook</option>
-								<option>Smartphone</option>
-								<option>Fone de ouvido</option>
+						<select id="produto" class="form-control">
+								<option value="">Produto</option>
+								<option value="Notebook">Notebook</option>
+								<option value="Smartphone">Smartphone</option>
+								<option value="Fone de ouvido">Fone de ouvido</option>
 						</select>
 					</div>
 					<div class="col-md-2">
 						<button class="btn btn-primary" onclick="pesquisarVendas()"><i class="fas fa-search"></i></button>	
 					</div>
 					
-				
 			</div>
 			
 		</div>
@@ -94,8 +93,8 @@
 		<div class="container">
 		<div class="row" id="tabela">
 				<div class="col">
-					<table class="table table-hover table-responsive-sm table-responsive-md">
-						<thead class="thead-dark ">
+					<table class="table table-dark table-hover table-responsive-sm table-responsive-md">
+						<thead>
 							<tr>
 								<th>Cód. Cliente</th>
 								<th>Cliente</th>
@@ -104,6 +103,7 @@
 								<th>Valor U.</th>
 								<th>Quantidade</th>
 								<th>Total (R$)</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody id="listaVendas">

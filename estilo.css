@@ -2,6 +2,7 @@ html, body, #home, #vender{
 	height: 100%;
 	overflow-x: hidden;
 }
+
 body{
 	
 	background: url(imagens/capa.png) no-repeat, url(imagens/fundo.png), linear-gradient(50deg, #FFA500, #FF8C00) ;
@@ -153,4 +154,18 @@ footer .navbar-nav a{
 }
 #tabela th{
 	color: white;
+}
+
+/* configurando o scrollbar */
+::-webkit-scrollbar{
+	width: 10px;
+}
+::-webkit-scrollbar-track{
+	background: #ada189;
+	border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #FFA500;
+	border-radius: 30px;
 }
