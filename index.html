@@ -30,7 +30,7 @@
 <body >
 
 	<header> <!-- Início do cabeçalho -->
-		<nav class="navbar navbar-expand-md navbar-info fixed-top navbar-transparente">
+		<nav class="navbar navbar-expand-md navbar-info navbar-transparente">
 			<div class="container"> <!-- Início do container -->
 				<a href="index.html" class="navbar-brand">
 					<img src="imagens/logo.svg" width="80">
@@ -128,7 +128,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<img src="imagens/vendedor1.png" class="img-fluid">
+					<picture>
+						<source srcset="imagens/vendedor3.png" media="(max-width: 767px)">
+						<img src="imagens/vendedor1.png" class="img-fluid">
+					</picture>
 				</div>
 
 				<div class="col-md-7" id="declaracao">

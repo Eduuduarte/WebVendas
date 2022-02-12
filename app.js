@@ -43,7 +43,6 @@ class Bd{
 
 	gravar(v){
 		let id = this.getProximoId()
-
 		
 		localStorage.setItem(id, JSON.stringify(v))
 
@@ -51,7 +50,6 @@ class Bd{
 	}
 
 	//Método para recuperar os registros feitos no localStorage
-
 	recuperarRegistros(){
 
 		let vendas = Array()
@@ -131,8 +129,6 @@ function cadastrarVendas(){
 
 		)
 
-	//console.log(venda)
-
 	if(venda.validarDados()){
 		
 		bd.gravar(venda)
@@ -173,7 +169,7 @@ function carregarRegistroVendas (venda = Array(), filtro = false){
 	}
 
 	let listaVendas = document.getElementById("listaVendas")
-	listaVendas.className = "tabl'-dark"
+	//listaVendas.className = "table-dark"
 	listaVendas.innerHTML = ""
 
 	venda.forEach(function (v){
