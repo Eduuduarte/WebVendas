@@ -212,3 +212,4 @@ function pesquisarVendas(){
 	this.carregarRegistroVendas(venda, true)
 	
 }
+

@@ -7,6 +7,9 @@
 
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 
+	<!-- -------########### Boxicons CSS ############ -->
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<script type="text/javascript" src="app.js"></script>
@@ -29,7 +32,8 @@
 </head>
 <body >
 
-	<header> <!-- Início do cabeçalho -->
+
+	<header id="dTopo"> <!-- Início do cabeçalho -->
 		<nav class="navbar navbar-expand-md navbar-info navbar-transparente">
 			<div class="container"> <!-- Início do container -->
 				<a href="index.html" class="navbar-brand">
@@ -52,6 +56,8 @@
 		</nav>
 		
 	</header> <!-- Fim do cabeçalho -->
+
+
 
 	<section id="home" class="d-flex">
 		<div class="container align-self-center ">
@@ -192,8 +198,16 @@
 			</div>
 			
 		</div>
+
+		<div class="btn topo" id="voltando-topo">
+			<a href="#dTopo"><i class='icon bx bx-chevron-up-circle' onclick="scrollToTop()"></i><br></a>
+			<p id="vt">Voltar ao topo</p>
+		</div>
 		
 	</footer>
+
+
+
 
 	<!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
