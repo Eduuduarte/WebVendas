@@ -144,6 +144,13 @@ footer .navbar-nav a{
 	background-color: white;
 }
 
+.imagem-vendedor{
+	background-image: url('imagens/vendedor2.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 #vender h1{
 	color: #FF8C00;
 }
@@ -186,4 +193,85 @@ footer .navbar-nav a{
 #vt{
 	background: #000;
 	color: white;
+}
+
+@media (max-width: 770px){
+	.imagem-vendedor{
+		display: none;
+	}
+}
+
+@media (max-width:530px) {
+	h1.titulo{
+		font-size: 30px;
+	}
+
+	.navbar-brand{
+		width: 50px;
+		margin-left: 10px;
+	}
+
+	.navbar-brand img{
+		width: 50px;
+		flex: 1;
+	}
+
+	#somos a{
+		margin-bottom: 10px;
+	}
+
+	div.parceiros{
+		margin-top: 10px;
+	}
+
+	.redes-sociais{
+		display: flex;
+		justify-content: left;
+		margin-top: 30px;
+		margin-left: 0;
+	}
+}
+
+@media (max-width:413px){
+	h1.titulo{
+		font-size: 25px;
+	}
+
+	.navbar-brand{
+		width: 40px;
+		margin-left: 10px;
+	}
+
+	.navbar-brand img{
+		width: 40px;
+		flex: 1;
+	}
+}
+
+@media (max-width:413px){
+	h1.titulo{
+		font-size: 20px;
+	}
+
+	.navbar-brand{
+		width: 30px;
+		margin-left: 10px;
+	}
+
+	.navbar-brand img{
+		width: 30px;
+		flex: 1;
+	}
+
+	#somos a{
+		font-size: 13px;
+	}
+
+	footer ul li{
+		margin: 0 5px;
+	}
+
+	footer ul li img{
+		width: 40px;
+	}
 }
